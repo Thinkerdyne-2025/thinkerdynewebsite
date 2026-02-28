@@ -41,9 +41,21 @@
   object-fit: contain;
 }
 
+.navbar__brand-text {
+  font-weight: 700;
+  font-size: 1.25rem;
+  letter-spacing: 0.02em;
+  color: var(--color-text, #1a2332);
+  text-transform: uppercase;
+}
+
 @media (max-width: 767px) {
   .navbar__logo-img {
     height: 36px;
+  }
+
+  .navbar__brand-text {
+    font-size: 1rem;
   }
 }
 

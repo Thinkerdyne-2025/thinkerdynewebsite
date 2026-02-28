@@ -40,6 +40,7 @@ export default function Navbar() {
             alt="THINKERDYNE"
             className="navbar__logo-img"
           />
+          <span className="navbar__brand-text">thinkerdyne</span>
         </Link>
 
         <button
