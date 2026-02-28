@@ -1,0 +1,5 @@
+/* App-level layout */
+main {
+  min-height: 100vh;
+  font-family: "Montserrat", "Inter", system-ui, -apple-system, sans-serif;
+}

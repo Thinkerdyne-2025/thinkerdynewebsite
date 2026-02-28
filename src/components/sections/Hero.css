@@ -1,0 +1,256 @@
+.hero {
+  position: relative;
+  background-color: var(--color-bg-dark);
+  text-align: left;
+  overflow: hidden;
+  min-height: 100vh;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero__video-wrap {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero__video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transform: scaleX(-1);   /* reverses image horizontally */
+}
+
+.hero__graphics {
+  position: absolute;
+  top: 4rem;
+  width: 260px;
+  height: 260px;
+
+  background: url("data:image/svg+xml,%3Csvg width='260' height='260' viewBox='0 0 260 260' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='130' cy='130' r='100' stroke='white' stroke-width='2' fill='none'/%3E%3Ccircle cx='130' cy='130' r='70' stroke='white' stroke-width='2' fill='none'/%3E%3Ccircle cx='130' cy='130' r='40' stroke='white' stroke-width='2' fill='none'/%3E%3C/svg%3E") center/contain no-repeat;
+
+  pointer-events: none;
+  z-index: 2;
+
+  opacity: 1.5;
+  filter: drop-shadow(0 0 20px rgba(255, 239, 239, 0.9));
+  animation: heroGraphicsSpin 60s linear infinite;
+}
+
+.hero__graphics_right {
+  position: absolute;
+  top: 4rem;
+  right: 0;
+  width: 260px;
+  height: 260px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Ccircle cx='100' cy='100' r='80' fill='none' stroke='rgba(255,255,255,0.12)' stroke-width='2'/%3E%3Ccircle cx='100' cy='100' r='55' fill='none' stroke='rgba(255,255,255,0.1)' stroke-width='1.5'/%3E%3Ccircle cx='100' cy='100' r='30' fill='none' stroke='rgba(255,255,255,0.08)' stroke-width='1'/%3E%3Cline x1='20' y1='100' x2='180' y2='100' stroke='rgba(255,255,255,0.06)' stroke-width='1'/%3E%3Cline x1='100' y1='20' x2='100' y2='180' stroke='rgba(255,255,255,0.06)' stroke-width='1'/%3E%3Ccircle cx='100' cy='20' r='3' fill='rgba(255,255,255,0.15)'/%3E%3Ccircle cx='180' cy='100' r='3' fill='rgba(255,255,255,0.15)'/%3E%3Ccircle cx='100' cy='180' r='3' fill='rgba(255,255,255,0.15)'/%3E%3Ccircle cx='20' cy='100' r='3' fill='rgba(255,255,255,0.15)'/%3E%3Ccircle cx='156' cy='44' r='2.5' fill='rgba(255,255,255,0.12)'/%3E%3Ccircle cx='44' cy='156' r='2.5' fill='rgba(255,255,255,0.12)'/%3E%3Ccircle cx='156' cy='156' r='2.5' fill='rgba(255,255,255,0.12)'/%3E%3Ccircle cx='44' cy='44' r='2.5' fill='rgba(255,255,255,0.12)'/%3E%3C/svg%3E")
+    center/contain no-repeat;
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0.8;
+  opacity: 1;    
+  animation: heroGraphicsSpin 60s linear infinite;
+}
+
+@keyframes heroGraphicsSpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(3, 45, 68, 0.88) 0%,
+    rgba(4, 67, 100, 0.82) 50%
+  );
+  z-index: 1;
+}
+
+.hero__particles {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.hero__particles canvas {
+  display: block;
+}
+
+.hero .hero__container {
+  position: relative;
+  z-index: 3;
+}
+
+.hero .hero__title,
+.hero .hero__subline {
+  color: var(--color-white);
+}
+
+.hero .hero__subline {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.hero__container {
+  max-width: var(--container-max);
+  width: 100%;
+ 
+  margin: 0 auto;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+}
+
+.hero__title {
+  margin-bottom: 1rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+}
+
+.hero__title-line {
+  display: block;
+  margin-top: 3rem;
+}
+
+.hero__title-nowrap {
+  white-space: normal;
+}
+
+.hero__subline {
+  margin-bottom: 1.5rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: clamp(1rem, 2vw, 1.25rem);
+}
+
+/* Service groups in hero */
+.hero__service-groups {
+  margin-bottom: 2.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem 3rem;
+  align-items: start;
+}
+
+.hero__service-group-title {
+  margin: 0 0 0.75rem;
+  font-size: clamp(1rem, 2.2vw, 1.5rem);
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.95);
+  text-transform: none;
+  letter-spacing: 0.02em;
+}
+
+.hero__service-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.4rem 0;
+}
+
+.hero__service-item {
+  position: relative;
+  padding-left: 1.5rem;
+  font-size: clamp(0.875rem, 1.8vw, 1.125rem);
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.95);
+  line-height: 1.7;
+}
+
+.hero__service-item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.6em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.25);
+}
+
+@media (max-width: 768px) {
+  .hero__service-groups {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 599px) {
+  .hero__service-group-title {
+    font-size: 1rem;
+  }
+
+  /* Allow "Connected Devices" to wrap on small screens so left alignment is preserved (no overflow) */
+  .hero__title-nowrap {
+    white-space: normal;
+  }
+}
+
+.hero__cta {
+  min-width: 180px;
+  border: 2px solid rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.12);
+  font-size: 1.2rem;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.hero__cta:hover {
+  background-color: rgba(255, 255, 255, 0.22);
+  border-color: #fff;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.25);
+}
+
+/* Very small screens: prevent hero content from sitting under fixed navbar */
+@media (max-width: 380px) {
+  .hero {
+    padding-top: 8rem;
+    justify-content: flex-start;
+    min-height: 100vh;
+    padding-bottom: 2rem;
+  }
+
+  .hero .hero__container {
+    padding-top: 0.5rem;
+  }
+
+  .hero__title {
+    font-size: clamp(1.35rem, 5vw, 1.75rem);
+  }
+
+  .hero__subline {
+    font-size: 0.9375rem;
+  }
+
+  .hero__service-group-title {
+    font-size: 0.9375rem;
+  }
+
+  .hero__service-item {
+    font-size: 0.875rem;
+  }
+
+  .hero__service-groups {
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero__cta {
+    font-size: 1rem;
+    min-width: 140px;
+    padding: 0.65rem 1.25rem;
+  }
+}
