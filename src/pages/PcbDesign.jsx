@@ -4,6 +4,7 @@ import imgPcbDesign from "../assets/pcb_design.jpg";
 import libmana from "../assets/libmana.png";
 import schema from "../assets/schema.png";
 import manuout from "../assets/manuout.png";
+import update from "../assets/update.jpeg";
 import "./ServicePage.css";
 
 const LIBRARY_BULLETS = [
@@ -175,7 +176,7 @@ export default function PcbDesign() {
 
         <section className="section">
           <div className="container">
-            <SectionSplit image={images.pcbLayout} imageAlt="PCB analysis">
+            <SectionSplit image={update} imageAlt="PCB analysis">
               <h2 className="service-page__h2">PCB Analysis and Validation:</h2>
               <p className="service-page__lead">
                 We perform detailed analysis and validation to ensure the PCB

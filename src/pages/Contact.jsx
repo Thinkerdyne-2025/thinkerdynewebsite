@@ -1,13 +1,18 @@
-import { useState } from "react";
-import emailjs from "@emailjs/browser";
+
+import { useState, useRef } from "react";
+import ReCAPTCHA from "react-google-recaptcha";
 import PageHero from "../components/PageHero";
 import { images } from "../constants/images";
 import "./ContactPage.css";
+
+const RECAPTCHA_SITE_KEY = import.meta.env.VITE_RECAPTCHA_SITE_KEY;
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [captchaToken, setCaptchaToken] = useState(null);
+  const recaptchaRef = useRef(null);
 
   const [formData, setFormData] = useState({
     firstName: "",
@@ -28,21 +33,20 @@ export default function Contact() {
     setLoading(true);
 
     try {
-      await emailjs.send(
-        "service_yqznqwa",
-        "template_ti6tfoo",
-        {
-          firstName: formData.firstName,
-          lastName: formData.lastName,
-          email: formData.email,
-          phone: formData.phone,
-          comments: formData.comments,
-        },
-        "Maevv6RMC5TXA7COQ", // Replace with EmailJS Public Key
-      );
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...formData, captchaToken }),
+      });
+
+      if (!res.ok) {
+        throw new Error("Server error");
+      }
 
       setSubmitted(true);
       setLoading(false);
+      setCaptchaToken(null);
+      if (recaptchaRef.current) recaptchaRef.current.reset();
 
       // reset form
       setFormData({
@@ -89,8 +93,8 @@ export default function Contact() {
               <h3 className="contact-page__info-heading">Email Us</h3>
               <p className="contact-page__emails">
                 <a href="mailto:info@thinkerdyne.com">info@thinkerdyne.com</a>
-                <br />
-                <a href="mailto:sales@thinkerdyne.com">sales@thinkerdyne.com</a>
+                {/* <br /> */}
+                {/* <a href="mailto:sales@thinkerdyne.com">sales@thinkerdyne.com</a> */}
               </p>
 
               <h3 className="contact-page__info-heading">Working Hours</h3>
@@ -183,10 +187,20 @@ export default function Contact() {
                       We typically respond within 12 hours!!
                     </p>
                   </div>
+
+                  <div className="contact-page__captcha">
+                    <ReCAPTCHA
+                      ref={recaptchaRef}
+                      sitekey={RECAPTCHA_SITE_KEY}
+                      onChange={(token) => setCaptchaToken(token)}
+                      onExpired={() => setCaptchaToken(null)}
+                    />
+                  </div>
+
                   <button
                     type="submit"
                     className="btn btn--primary contact-page__submit"
-                    disabled={loading}
+                    disabled={loading || !captchaToken}
                   >
                     {loading ? "Sending..." : "Submit Form"}
                   </button>
