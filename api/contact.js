@@ -1,19 +1,33 @@
 import nodemailer from "nodemailer";
 
+function withCors(res) {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+  return res;
+}
+
 export default async function handler(req, res) {
+  withCors(res);
+
+  if (req.method === "OPTIONS") {
+    return res.status(204).end();
+  }
 
   if (req.method !== "POST") {
-    res.setHeader("Allow", "POST");
+    res.setHeader("Allow", "POST, OPTIONS");
     return res.status(405).json({ error: "Method not allowed" });
   }
-  const { firstName, lastName, email, phone, comments, captchaToken } = req.body || {};
+  const { firstName, lastName, email, phone, comments, captchaToken } =
+    req.body || {};
+  console.log("captchaToken", captchaToken);
   if (!captchaToken) {
     return res.status(400).json({ error: "reCAPTCHA verification required" });
   }
   try {
     const recaptchaRes = await fetch(
       `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${captchaToken}`,
-      { method: "POST" }
+      { method: "POST" },
     );
     const recaptchaData = await recaptchaRes.json();
     if (!recaptchaData.success) {
@@ -33,13 +47,12 @@ export default async function handler(req, res) {
   const transporter = nodemailer.createTransport({
     host: process.env.SMTP_HOST,
     port: Number(process.env.SMTP_PORT) || 465,
-    secure: (Number(process.env.SMTP_PORT) || 465) === 465,
+    secure: false,
     auth: {
       user: process.env.SMTP_USER,
       pass: process.env.SMTP_PASS,
     },
   });
-
 
   const mailOptions = {
     from: `"Thinkerdyne Contact Form" <${process.env.SMTP_USER}>`,
@@ -78,9 +91,13 @@ export default async function handler(req, res) {
 
   try {
     await transporter.sendMail(mailOptions);
-    return res.status(200).json({ success: true, message: "Email sent successfully" });
+    return res
+      .status(200)
+      .json({ success: true, message: "Email sent successfully" });
   } catch (err) {
     console.error("Nodemailer error:", err);
-    return res.status(500).json({ error: "Failed to send email. Please try again later." });
+    return res
+      .status(500)
+      .json({ error: "Failed to send email. Please try again later." });
   }
 }

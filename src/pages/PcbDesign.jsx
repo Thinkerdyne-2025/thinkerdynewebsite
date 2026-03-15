@@ -27,7 +27,7 @@ const SCHEMATIC_ENTRY_BULLETS = [
 ];
 
 const PCB_LAYOUT_BULLETS = [
-  "Schematic capture and circuit design based on product requirements",
+  // "Schematic capture and circuit design based on product requirements",
   "PCB layout for single-layer, multi-layer, and high-density designs",
   "High-speed PCB design with controlled impedance and signal integrity focus",
   "Analog, digital, mixed-signal, and power electronics PCB layout",

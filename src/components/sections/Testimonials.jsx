@@ -4,63 +4,63 @@ import {
   useStaggerChildren,
 } from "../../hooks/useScrollAnimation";
 import "./Testimonials.css";
-import reviewimg from "../../assets/review.jpeg"
+import reviewimg from "../../assets/review.jpeg";
 
 const TESTIMONIALS = [
   {
-    name: "Arindam Ghosh",
-    role: "Founder",
+    name: "Trusted Customer",
+    role: "Founder – Product Engineering Company",
     text: "Extremely professional and talent team. We rely on this team completely for PCB services. Our design included an auto grade camera FPDlink module and quad core ARM processor based edge computing unit. It was a first pass success, thanks to this team. Would highly recommend.",
     rating: 5,
     initial: "AG",
     // platform: "G",
-    icon:reviewimg
+    icon: reviewimg,
   },
   {
-    name: "Sathish Kumar",
-    role: "Senior Manager H&D",
+    name: "Trusted Customer",
+    role: "Senior R&D Manager – Electronics Industry",
     text: "Expert in multi-layer Hi Speed mixed signal PCB design and providing turnkey product service with end-to-end tech.",
     rating: 5,
     initial: "SK",
     // platform: "G",
-    icon:reviewimg
+    icon: reviewimg,
   },
   {
-    name: "Mahesh",
-    role: "Engineering Lead",
+    name: "Trusted Customer",
+    role: "Engineering Lead – Embedded Systems",
     text: "Thinkerdyne Technologies has provided excellent PCB design services. Their team is easy to work with, responsive, and highly professional. They handle design changes and modifications efficiently, making the entire process smooth and hassle-free.",
     rating: 5,
     initial: "MT",
-    icon:reviewimg
+    icon: reviewimg,
     // platform: "G",
   },
   {
-    name: "Kaws Patsha",
-    role: "Technical Director",
+    name: "Trusted Customer",
+    role: "Technical Director – Semiconductor Industry",
     text: "Very happy with the support, Team is very friendly and deliver the projects on time with quality, really appreciate the team.",
     rating: 5,
     initial: "KP",
-    icon:reviewimg
+    icon: reviewimg,
     // platform: null,
   },
   {
-    name: "Thangapandi Arumugam",
-    role: "Product Manager",
+    name: "Trusted Customer",
+    role: "Product Manager – Technology Company",
     text: "Thinkerdyne providing pcb design and development solutions for turnkey and service requirements.",
     // Very talented team of engineers with deep technical expertise, strong understanding of design concepts and tools, and commitment to quality with on time delivery
     rating: 5,
     initial: "TA",
-    icon:reviewimg
+    icon: reviewimg,
     // platform: "P",
   },
   {
-    name: "Dhanasekar C",
-    role: "Product Manager",
+    name: "Trusted Customer",
+    role: "Product Manager – Industrial Electronics",
     text: "Strongly Recommended PCB Design Partner We’ve had an excellent experience working with Thinkerdyne",
     //  for PCB design and development solutions—both turnkey and service requirements.
     rating: 5,
     initial: "DC",
-    icon:reviewimg
+    icon: reviewimg,
     // platform: "P",
   },
 ];
@@ -70,9 +70,7 @@ function TestimonialCard({ t, isExpanded, onToggle }) {
   const isLong = t.text.length > truncateLength;
 
   const displayText =
-    isExpanded || !isLong
-      ? t.text
-      : t.text.slice(0, truncateLength) + "...";
+    isExpanded || !isLong ? t.text : t.text.slice(0, truncateLength) + "...";
 
   return (
     <div className="testimonials__card">
@@ -80,8 +78,8 @@ function TestimonialCard({ t, isExpanded, onToggle }) {
         // <span className="testimonials__card-platform" aria-hidden="true">
         //   {t.platform}
         // </span>
-        <span style={{position:"absolute",right:0,top:"0.6rem"}}>
-        <img src={t.icon} alt="" width={50} height={50}/>
+        <span style={{ position: "absolute", right: 0, top: "0.6rem" }}>
+          <img src={t.icon} alt="" width={50} height={50} />
         </span>
       )}
 
@@ -139,12 +137,10 @@ export default function Testimonials() {
   });
 
   return (
-  <section id="testimonials" className="testimonials section section--alt">
+    <section id="testimonials" className="testimonials section section--alt">
       <div className="container">
         <div className="testimonials__header" ref={headerRef}>
-          <h2 className="testimonials__title">
-            What our clients say about us
-          </h2>
+          <h2 className="testimonials__title">What our clients say about us</h2>
         </div>
 
         <div className="testimonials__grid" ref={gridRef}>

@@ -3,12 +3,24 @@ import imgEmbeddedFirmware from "../assets/firmwre.jpg";
 import "./ServicePage.css";
 
 const KEY_CAPABILITIES = [
-  "Embedded firmware development for microcontrollers and embedded processors",
-  "Hardware bring-up and low-level driver development",
-  "Peripheral driver development (GPIO, UART, SPI, I2C, CAN, ADC, PWM, USB, Ethernet)",
-  "Communication protocol implementation and system integration",
-  "RTOS and bare-metal firmware development",
-  "Firmware debugging, optimization, and validation",
+  // "Embedded firmware development for microcontrollers and embedded processors",
+  // "Hardware bring-up and low-level driver development",
+  // "Peripheral driver development (GPIO, UART, SPI, I2C, CAN, ADC, PWM, USB, Ethernet)",
+  // "Communication protocol implementation and system integration",
+  // "RTOS and bare-metal firmware development",
+  // "Firmware debugging, optimization, and validation",
+
+  "Embedded firmware development",
+
+  "Hardware bring-up and driver development",
+
+  "Peripheral drivers (GPIO, UART, SPI, I²C, CAN, ADC, PWM, USB,)",
+
+  "Communication protocol integration",
+
+  "RTOS and bare-metal development",
+
+  "Firmware debugging and optimization",
 ];
 
 const DELIVERABLES = [
@@ -22,6 +34,9 @@ const SUPPORTED_PLATFORMS = [
   "ARM Cortex-M microcontrollers (STM32, NXP, Microchip, TI)",
   "8-bit, 16-bit, and 32-bit microcontrollers",
   "Bare-metal and RTOS-based embedded systems",
+  "  Embedded Linux platforms and processor-based systems",
+  "ARM Cortex-A series application processors",
+  " Custom hardware platforms and evaluation boards",
 ];
 
 const APPLICATIONS = [

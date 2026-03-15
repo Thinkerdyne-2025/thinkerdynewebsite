@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import heroVideo from "../../assets/6466100-uhd_3840_2160_30fps.mp4";
 import ParticleBackground from "../ParticleBackground";
-import bg from "../../assets/bghome1.jpeg"
+import bg from "../../assets/bghome1.jpeg";
 import "./Hero.css";
 
 const prefersReducedMotion = () =>
@@ -63,7 +63,7 @@ export default function Hero() {
           playsInline
           tabIndex={-1}
         /> */}
-        <img src={bg} alt="image" className="hero__video"/>
+        <img src={bg} alt="image" className="hero__video" />
       </div>
       <ParticleBackground />
       <ParticleBackground />

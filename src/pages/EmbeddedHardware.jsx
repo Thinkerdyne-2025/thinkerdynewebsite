@@ -33,6 +33,8 @@ const SUPPORTED_PROCESSORS = [
   "Microchip, NXP, STMicroelectronics, and TI platforms",
   "Processor-based embedded systems",
   "Industrial and IoT hardware platforms",
+  "Wireless MCU platforms (Wi-Fi, BLE, Zigbee, LoRa)",
+  "⁠Cellular IoT modules including Quectel platforms (LTE, NB-IoT)",
 ];
 
 const SCOPE = [
@@ -69,20 +71,35 @@ export default function EmbeddedHardware() {
                     className="service-page__lead"
                     style={{ maxWidth: "100%" }}
                   >
-                    Thinkerdyne delivers advanced hardware design solutions for
-                    embedded and electronic systems. We specialize in developing
-                    processor-based hardware platforms that meet demanding
-                    requirements for performance, reliability, and
-                    manufacturability.
+                    Thinkerdyne Technologies delivers advanced hardware design
+                    solutions for embedded and electronic systems, enabling
+                    businesses to develop reliable, high-performance, and
+                    scalable products. We specialize in the design and
+                    development of processor-based hardware platforms tailored
+                    to meet demanding requirements for performance, reliability,
+                    scalability, and manufacturability across diverse
+                    applications.
                   </p>
                   <p
                     className="service-page__lead"
                     style={{ maxWidth: "100%" }}
                   >
-                    We work closely with customers from concept to production,
+                    {/* We work closely with customers from concept to production,
                     providing efficient, scalable, and cost-effective solutions
                     that meet global quality standards and accelerate product
-                    development.
+                    development. */}
+                    {/* Our engineers work closely with hardware teams to ensure
+                    smooth hardware bring-up, efficient debugging, and optimized
+                    system performance. Using structured development practices
+                    and rigorous validation, we deliver robust firmware
+                    solutions for real-world applications. */}
+                    Our engineering team provides comprehensive end-to-end
+                    hardware development services, including system architecture
+                    definition, component selection, schematic design,
+                    high-speed interface design, and thorough design validation.
+                    Using industry-proven methodologies and modern engineering
+                    tools, we ensure robust designs that are optimized for
+                    performance, cost, and production readiness.
                   </p>
                 </div>
               </div>
