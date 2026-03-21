@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { useSameRouteNavClick } from "../hooks/useSameRouteNavClick";
 import {
   routes,
   coreServicesCategory1,
@@ -21,6 +22,7 @@ const QUICK_LINKS = [
 
 export default function Footer() {
   const [showScrollTop, setShowScrollTop] = useState(false);
+  const handleSameRouteNavClick = useSameRouteNavClick();
 
   useEffect(() => {
     const onScroll = () => setShowScrollTop(window.scrollY > 400);
@@ -133,7 +135,12 @@ export default function Footer() {
               <ul className="footer__list">
                 {coreServicesCategory1.map((service) => (
                   <li key={service.title}>
-                    <Link to={service.path}>{service.title}</Link>
+                    <Link
+                      to={service.path}
+                      onClick={handleSameRouteNavClick(service.path)}
+                    >
+                      {service.title}
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -143,7 +150,12 @@ export default function Footer() {
               <ul className="footer__list">
                 {coreServicesCategory2.map((service) => (
                   <li key={service.title}>
-                    <Link to={service.path}>{service.title}</Link>
+                    <Link
+                      to={service.path}
+                      onClick={handleSameRouteNavClick(service.path)}
+                    >
+                      {service.title}
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -160,7 +172,12 @@ export default function Footer() {
                     {link.label}
                   </a>
                 ) : (
-                  <Link to={link.to}>{link.label}</Link>
+                  <Link
+                    to={link.to}
+                    onClick={handleSameRouteNavClick(link.to)}
+                  >
+                    {link.label}
+                  </Link>
                 )}
               </li>
             ))}

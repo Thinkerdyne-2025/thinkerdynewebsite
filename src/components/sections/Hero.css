@@ -229,7 +229,9 @@
   }
 
   .hero .hero__container {
-    padding-top: 0.5rem;
+    /* padding-top: 0.5rem; */
+
+    margin-top: -1rem;
   }
 
   .hero__title {

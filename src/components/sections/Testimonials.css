@@ -126,6 +126,12 @@
   box-shadow: 0 2px 6px rgba(4, 67, 100, 0.1);
 }
 
+.testimonials__avatar-icon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
 .testimonials__card-meta {
   flex: 1;
   min-width: 0;

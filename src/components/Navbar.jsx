@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { routes, serviceRoutes } from "../constants/images";
+import { useSameRouteNavClick } from "../hooks/useSameRouteNavClick";
 import "./Navbar.css";
 import thinkerdynelogo from "../assets/tlogo.jpeg";
 
@@ -31,10 +32,16 @@ export default function Navbar() {
     setDropdownOpen(false);
   };
 
+  const handleSameRouteNavClick = useSameRouteNavClick(closeMenu);
+
   return (
     <header className={`navbar ${isScrolled ? "navbar--scrolled" : ""}`}>
       <div className="navbar__inner">
-        <Link to={"/"} className="navbar__brand" onClick={closeMenu}>
+        <Link
+          to={"/"}
+          className="navbar__brand"
+          onClick={handleSameRouteNavClick("/")}
+        >
           <img
             src={thinkerdynelogo}
             alt="THINKERDYNE"
@@ -61,13 +68,17 @@ export default function Navbar() {
               <Link
                 to={routes.home}
                 className="navbar__link"
-                onClick={closeMenu}
+                onClick={handleSameRouteNavClick(routes.home)}
               >
                 HOME
               </Link>
             </li>
             <li>
-              <Link to="/about" className="navbar__link" onClick={closeMenu}>
+              <Link
+                to={routes.about}
+                className="navbar__link"
+                onClick={handleSameRouteNavClick(routes.about)}
+              >
                 ABOUT US
               </Link>
             </li>
@@ -90,7 +101,7 @@ export default function Navbar() {
                       <Link
                         to={service.path}
                         className="navbar__dropdown-link"
-                        onClick={closeMenu}
+                        onClick={handleSameRouteNavClick(service.path)}
                       >
                         {service.title}
                       </Link>
@@ -103,7 +114,7 @@ export default function Navbar() {
           <Link
             to="/contact"
             className="navbar__link navbar__contact"
-            onClick={closeMenu}
+            onClick={handleSameRouteNavClick("/contact")}
           >
             CONTACT US
           </Link>

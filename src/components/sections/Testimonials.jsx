@@ -86,7 +86,18 @@ function TestimonialCard({ t, isExpanded, onToggle }) {
       <div className="testimonials__card-body">
         <div className="testimonials__card-header">
           <div className="testimonials__avatar" aria-hidden="true">
-            <span>{t.initial}</span>
+            <svg
+              className="testimonials__avatar-icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.75"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+              <circle cx="12" cy="7" r="4" />
+            </svg>
           </div>
 
           <div className="testimonials__card-meta">

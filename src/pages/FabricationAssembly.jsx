@@ -42,10 +42,10 @@ export default function FabricationAssembly() {
           <div className="container">
             <div className="service-page__panel">
               <h2 className="service-page__panel-title">
-                Fabrication, Assembly, and PCB Rework
+                Fabrication, Assembly and PCB Rework
               </h2>
               <p className="service-page__lead" style={{ maxWidth: "100%" }}>
-                Thinkerdyne provides professional PCB fabrication, assembly, and
+                Thinkerdyne provides professional PCB fabrication, assembly and
                 rework support to ensure reliable and efficient manufacturing of
                 electronic products. We work closely with trusted and qualified
                 fabrication and assembly vendors to deliver high-quality PCB
