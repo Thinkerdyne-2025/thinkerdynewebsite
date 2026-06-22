@@ -19,6 +19,13 @@ export const seoByPath = {
     keywords:
       'about Thinkerdyne, electronics engineering company, Bengaluru, PCB design company, embedded systems design',
   },
+  '/products': {
+    title: `Hybrid Pneumatic & Electrical Slip Ring | ${SITE_NAME}`,
+    description:
+      'High-performance hybrid slip ring for simultaneous electrical power, signal, RF, FORJ, and compressed air transmission. Custom-engineered rotary interfaces for defense, aerospace, and industrial automation.',
+    keywords:
+      'hybrid slip ring, pneumatic slip ring, electrical slip ring, rotary union, FORJ, defense slip ring, aerospace slip ring, industrial automation',
+  },
   '/contact': {
     title: `Contact Us | ${SITE_NAME}`,
     description:

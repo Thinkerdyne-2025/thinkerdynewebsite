@@ -11,6 +11,7 @@ import "./sections/Footer.css";
 const QUICK_LINKS = [
   { label: "HOME", to: routes.home },
   { label: "ABOUT US", to: "/about" },
+  { label: "PRODUCTS", to: "/products" },
   { label: "ENGINEERING SERVICES", to: routes.home },
   { label: "CONTACT US", to: "/contact" },
   {

@@ -87,6 +87,7 @@ export const images = {
 export const routes = {
   home: '/',
   about: '/about',
+  products: '/products',
   pcbDesign: '/pcb-design',
   pcbAnalysis: '/pcb-analysis',
   manufacturing: '/manufacturing',

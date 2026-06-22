@@ -82,6 +82,15 @@ export default function Navbar() {
                 ABOUT US
               </Link>
             </li>
+            <li>
+              <Link
+                to={routes.products}
+                className="navbar__link"
+                onClick={handleSameRouteNavClick(routes.products)}
+              >
+                PRODUCTS
+              </Link>
+            </li>
             <li className="navbar__dropdown" ref={dropdownRef}>
               <span
                 className={`navbar__link navbar__link--trigger ${dropdownOpen ? "navbar__link--open" : ""}`}

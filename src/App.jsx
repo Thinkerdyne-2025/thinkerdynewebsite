@@ -2,6 +2,7 @@ import { Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
 import Home from './pages/Home';
 import About from './pages/About';
+import Product from './pages/Product';
 import Contact from './pages/Contact';
 import PcbDesign from './pages/PcbDesign';
 import PcbAnalysis from './pages/PcbAnalysis';
@@ -21,6 +22,7 @@ function App() {
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
         <Route path="about" element={<About />} />
+        <Route path="products" element={<Product />} />
         <Route path="contact" element={<Contact />} />
         <Route path="pcb-design" element={<PcbDesign />} />
         <Route path="pcb-analysis" element={<PcbAnalysis />} />
