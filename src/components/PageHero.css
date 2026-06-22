@@ -45,3 +45,26 @@
   font-size: 1.325rem;
   max-width: 800px;
 }
+
+@media (max-width: 767px) {
+  .page-hero {
+    align-items: flex-start;
+    min-height: auto;
+    padding-top: 72px;
+  }
+
+  .page-hero__content {
+    padding-top: 1.5rem;
+    padding-bottom: 2.5rem;
+  }
+
+  .page-hero__title {
+    font-size: clamp(1.35rem, 5vw, 1.875rem);
+    line-height: 1.25;
+  }
+
+  .page-hero__subtitle {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+}
