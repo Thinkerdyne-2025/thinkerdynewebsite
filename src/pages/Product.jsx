@@ -126,9 +126,12 @@ const SPEC_ROWS = [
 ];
 
 const GALLERY = [
-  { src: imgBrass, alt: "Hybrid slip ring with brass pneumatic fittings" },
+  // { src: imgBrass, alt: "Hybrid slip ring with brass pneumatic fittings" },
   { src: imgFlange, alt: "Hybrid slip ring flange mounting view" },
-  { src: imgSide, alt: "Hybrid slip ring side view with electrical and pneumatic connections" },
+  {
+    src: imgSide,
+    alt: "Hybrid slip ring side view with electrical and pneumatic connections",
+  },
   { src: imgThroughBore, alt: "Hybrid slip ring through-bore configuration" },
 ];
 
@@ -138,7 +141,7 @@ export default function Product() {
       <PageHero
         title="Hybrid Pneumatic & Electrical Slip Ring"
         subtitle="Engineered for Reliable Power, Signal, RF, FORJ and Fluid Transmission"
-        backgroundImage={images.industryIndustrial}
+        backgroundImage={images.about}
       />
       <div className="product-page">
         <section className="product-page__section section">
@@ -154,13 +157,13 @@ export default function Product() {
                 High-Performance Rotary Interface
               </h2>
               <p className="product-page__lead">
-                Our Hybrid Pneumatic & Electrical Slip Ring is a high-performance
-                rotary interface designed to simultaneously transfer electrical
-                power, control signals, data, and compressed air through a single
-                compact assembly. Developed for demanding industrial and
-                automation applications, this solution eliminates the complexity
-                of multiple rotary joints while ensuring reliable, uninterrupted
-                operation.
+                Our Hybrid Pneumatic & Electrical Slip Ring is a
+                high-performance rotary interface designed to simultaneously
+                transfer electrical power, control signals, data, and compressed
+                air through a single compact assembly. Developed for demanding
+                industrial and automation applications, this solution eliminates
+                the complexity of multiple rotary joints while ensuring
+                reliable, uninterrupted operation.
               </p>
               <p className="product-page__lead">
                 Designed and customized to meet specific customer requirements,
@@ -178,13 +181,21 @@ export default function Product() {
           aria-labelledby="key-features-heading"
         >
           <div className="container">
-            <h2 id="key-features-heading" className="product-page__section-heading">
+            <h2
+              id="key-features-heading"
+              className="product-page__section-heading"
+            >
               Key Features
             </h2>
             <div className="product-page__features-grid">
               {KEY_FEATURES.map((feature) => (
-                <article key={feature.title} className="product-page__feature-card">
-                  <h3 className="product-page__feature-title">{feature.title}</h3>
+                <article
+                  key={feature.title}
+                  className="product-page__feature-card"
+                >
+                  <h3 className="product-page__feature-title">
+                    {feature.title}
+                  </h3>
                   <ul className="product-page__feature-list">
                     {feature.points.map((point) => (
                       <li key={point}>{point}</li>
@@ -212,7 +223,10 @@ export default function Product() {
           aria-labelledby="applications-heading"
         >
           <div className="container">
-            <h2 id="applications-heading" className="product-page__section-heading">
+            <h2
+              id="applications-heading"
+              className="product-page__section-heading"
+            >
               Applications
             </h2>
 
@@ -224,7 +238,9 @@ export default function Product() {
                   reliable transmission of power, signals, and pneumatic media
                   across rotating interfaces.
                 </p>
-                <h4 className="product-page__app-subtitle">Typical Applications</h4>
+                <h4 className="product-page__app-subtitle">
+                  Typical Applications
+                </h4>
                 <ul className="product-page__app-list">
                   {DEFENSE_APPLICATIONS.map((item) => (
                     <li key={item}>{item}</li>
@@ -245,7 +261,9 @@ export default function Product() {
                   platforms where performance, reliability, and compactness are
                   critical.
                 </p>
-                <h4 className="product-page__app-subtitle">Typical Applications</h4>
+                <h4 className="product-page__app-subtitle">
+                  Typical Applications
+                </h4>
                 <ul className="product-page__app-list">
                   {AEROSPACE_APPLICATIONS.map((item) => (
                     <li key={item}>{item}</li>
@@ -262,7 +280,10 @@ export default function Product() {
 
             <div className="product-page__app-grid product-page__app-grid--compact">
               {OTHER_APPLICATIONS.map((app) => (
-                <article key={app.title} className="product-page__app-card product-page__app-card--compact">
+                <article
+                  key={app.title}
+                  className="product-page__app-card product-page__app-card--compact"
+                >
                   <h3 className="product-page__app-title">{app.title}</h3>
                   <p className="product-page__app-text">{app.text}</p>
                 </article>
@@ -286,20 +307,22 @@ export default function Product() {
 
         <section className="product-page__section section section--alt">
           <div className="container">
-            <h2 className="product-page__section-heading">Customer Success Story</h2>
+            <h2 className="product-page__section-heading">
+              Customer Success Story
+            </h2>
             <div className="product-page__story">
               <p>
                 This hybrid slip ring was specifically developed to overcome
                 reliability issues experienced with a previously installed
-                competitive solution. By analyzing the customer&apos;s operational
-                challenges and application requirements, our engineering team
-                delivered a customized design that significantly improved system
-                performance.
+                competitive solution. By analyzing the customer&apos;s
+                operational challenges and application requirements, our
+                engineering team delivered a customized design that
+                significantly improved system performance.
               </p>
               <p>
                 The result was enhanced reliability, reduced maintenance
-                requirements, and positive customer appreciation for successfully
-                resolving a long-standing operational issue.
+                requirements, and positive customer appreciation for
+                successfully resolving a long-standing operational issue.
               </p>
             </div>
           </div>
@@ -307,7 +330,9 @@ export default function Product() {
 
         <section className="product-page__section section">
           <div className="container">
-            <h2 className="product-page__section-heading">Technical Specifications</h2>
+            <h2 className="product-page__section-heading">
+              Technical Specifications
+            </h2>
             <div className="product-page__table-wrap">
               <table className="product-page__table">
                 <thead>
@@ -327,7 +352,8 @@ export default function Product() {
               </table>
             </div>
             <p className="product-page__spec-note">
-              Specifications can be customized based on application requirements.
+              Specifications can be customized based on application
+              requirements.
             </p>
           </div>
         </section>

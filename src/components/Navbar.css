@@ -18,7 +18,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  min-height: 72px;
+  min-height: 88px;
   gap: 1rem;
   width: 100%;
   margin: 0;
@@ -36,14 +36,15 @@
 
 .navbar__logo-img {
   display: block;
-  height: 44px;
+  height: 74px;
   width: auto;
   object-fit: contain;
 }
 
 .navbar__brand-text {
   font-weight: 700;
-  font-size: 1.95rem;
+  font-size: 3.5rem;
+  line-height: 1.05;
   letter-spacing: 0.02em;
   color: var(--color-text, #1a2332);
   text-transform: uppercase;
@@ -51,11 +52,12 @@
 
 @media (max-width: 767px) {
   .navbar__logo-img {
-    height: 36px;
+    height: 58px;
   }
 
   .navbar__brand-text {
-    font-size: 1rem;
+    font-size: 1.875rem;
+    line-height: 1.05;
   }
 }
 
@@ -242,7 +244,7 @@
     align-items: center;
     justify-content: space-between;
     flex-wrap: nowrap;
-    min-height: 72px;
+    min-height: 88px;
   }
 
   .navbar__toggle {
@@ -253,7 +255,7 @@
 
   .navbar__nav {
     position: fixed;
-    top: 72px;
+    top: 88px;
     left: 0;
     right: 0;
     bottom: auto;
