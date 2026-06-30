@@ -18,7 +18,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  min-height: 76px;
+  min-height: 72px;
   gap: 1rem;
   width: 100%;
   margin: 0;
@@ -36,7 +36,7 @@
 
 .navbar__logo-img {
   display: block;
-  height: 62px;
+  height: 54px;
   width: auto;
   object-fit: contain;
 }
@@ -51,7 +51,7 @@
 
 @media (max-width: 767px) {
   .navbar__logo-img {
-    height: 48px;
+    height: 42px;
   }
 
   .navbar__brand-text {
@@ -242,7 +242,7 @@
     align-items: center;
     justify-content: space-between;
     flex-wrap: nowrap;
-    min-height: 76px;
+    min-height: 72px;
   }
 
   .navbar__toggle {
@@ -253,7 +253,7 @@
 
   .navbar__nav {
     position: fixed;
-    top: 76px;
+    top: 72px;
     left: 0;
     right: 0;
     bottom: auto;
