@@ -36,7 +36,7 @@
 
 .navbar__logo-img {
   display: block;
-  height: 44px;
+  height: 54px;
   width: auto;
   object-fit: contain;
 }
@@ -51,7 +51,7 @@
 
 @media (max-width: 767px) {
   .navbar__logo-img {
-    height: 36px;
+    height: 42px;
   }
 
   .navbar__brand-text {

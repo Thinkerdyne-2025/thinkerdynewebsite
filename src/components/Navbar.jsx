@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { routes, serviceRoutes } from "../constants/images";
 import { useSameRouteNavClick } from "../hooks/useSameRouteNavClick";
 import "./Navbar.css";
-import thinkerdynelogo from "../assets/tlogo.jpeg";
+import thinkerdynelogo from "../assets/logo_New.jpeg";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -98,7 +98,7 @@ export default function Navbar() {
                 aria-expanded={dropdownOpen}
                 aria-haspopup="true"
               >
-                ENGINEERING SERVICES
+                SERVICES
                 <span className="navbar__dropdown-chevron" aria-hidden="true" />
               </span>
               {dropdownOpen && (
