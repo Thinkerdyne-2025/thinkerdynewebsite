@@ -168,7 +168,7 @@ export default function About() {
           </div>
         </section>
 
-        <section
+        {/* <section
           className="about-page__section section about-page__infra"
           aria-labelledby="our-infrastructure-heading"
         >
@@ -190,10 +190,10 @@ export default function About() {
                     alt=""
                     className="about-page__infra-img"
                   />
-                  {/* <p className="about-page__infra-caption">
+                  <p className="about-page__infra-caption">
                     Our experienced engineering team brings decades of combined
                     expertise in hardware design, PCB development.
-                  </p> */}
+                  </p>
                 </div>
               </div>
               <div className="about-page__infra-col">
@@ -204,15 +204,15 @@ export default function About() {
                     alt=""
                     className="about-page__infra-img"
                   />
-                  {/* <p className="about-page__infra-caption">
+                  <p className="about-page__infra-caption">
                     State-of-the-art electronics lab equipped for prototyping,
                     testing, and validation of electronic designs and products.
-                  </p> */}
+                  </p>
                 </div>
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
 
         <section className="about-page__section section about-page__cta about-page__cta--light">
           <div className="container about-page__cta-inner">
@@ -246,7 +246,8 @@ export default function About() {
                   No 59, 60, NL Arcade, Second Main, Vinayaka Layout, Shanthipura, Electronic City, Phase II, Bengaluru, Karnataka, India – 560100
                 </address>
                 <p className="about-page__contact">
-                  <strong>Phone:</strong> <a href="tel:+919677510113">+91 9677510113</a><br />
+                  <strong>Phone:</strong> <a href="tel:+919677510113">+91 9677510113</a>,{" "}
+                  <a href="tel:08049892600">08049892600</a><br />
                   <strong>Mail:</strong> <a href="mailto:info@thinkerdyne.com">info@thinkerdyne.com</a>
                 </p>
               </div>
